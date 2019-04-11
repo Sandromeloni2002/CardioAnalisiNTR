@@ -25,7 +25,7 @@ namespace CardioanalisiLibrary
             if (freq < 60) return "Bradicardia";
             else if (freq >= 60 && freq <= 100) return "Normale";
             else if (freq > 100) return "Tachicardia";
-            else if (freq <= 0) return "E";
+            else if (freq <= 0) return "E"; 
         }
             
 
