@@ -23,9 +23,9 @@ namespace CardioanalisiLibrary
         public static string Valori(int freq, string ris)
         {
             if (freq < 60) return "Bradicardia";
-            if (freq >= 60 || freq <= 100) return "Normale";
-            if (freq > 100) return "Tachicardia";
-            if (freq <= 0) return "E";
+            else if (freq >= 60 && freq <= 100) return "Normale";
+            else if (freq > 100) return "Tachicardia";
+            else if (freq <= 0) return "E";
         }
             
 
