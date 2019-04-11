@@ -37,5 +37,23 @@ namespace DataCardio.Test
 
             Assert.AreEqual(att, ris);
         }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(-1, "Errore")]
+        [DataRow(0, "Errore")]
+        [DataRow(20, "Bradicardia")]
+        [DataRow(60, "Normale")]
+        [DataRow(100, "Normale")]
+        [DataRow(120, "Tachicardia")]
+
+        public void TestMethodValori(int freq, string ris)
+        {
+            string att = CardioanalisiLibrary.DataCardio.Valori(freq, ris);
+
+            Assert.AreEqual(att, ris);
+        }
+
+
     }
 }
