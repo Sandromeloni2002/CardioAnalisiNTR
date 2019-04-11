@@ -20,7 +20,7 @@ namespace CardioanalisiLibrary
             else return (220 - eta) * 0.7;
         }
 
-        public static string Valori(int freq, string ris)
+        public static string ValoriA(int freq, string ris)
         {
             if (freq < 60) return "Bradicardia";
             else if (freq >= 60 && freq <= 100) return "Normale";
