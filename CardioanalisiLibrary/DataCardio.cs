@@ -8,5 +8,6 @@ namespace CardioanalisiLibrary
 {
     public class DataCardio
     {
+
     }
 }
