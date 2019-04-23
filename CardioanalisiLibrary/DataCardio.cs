@@ -23,15 +23,18 @@ namespace CardioanalisiLibrary
         public static string Valori(int freq, string ris)
         {
             if (freq < 60) return "Bradicardia";
-            if (freq >= 60 && freq <= 100) return "Normale";
-            if (freq > 100) return "Tachicardia";
-            if (freq <= 0) return "Errore";
+            else if (freq >= 60 && freq <= 100) return "Normale";
+            else if (freq > 100) return "Tachicardia";
+            else if (freq <= 0) return "Errore";
+            else return "Errore";
         }
 
-        public static double CalorieBruciate(int f, int p, int a, int t, string ses)
+        public static double CalorieBruciate(int f, int p, int a, int t, string ses, int ris)
         {
-            if (ses == "M") return ((a * 0.2017) + (p * 0.199) + (f * 0.6309) - 55.0969) * t / 4.184;
-            else
+            if (f <= 0 || p <= 0 || a <= 0 || t <= 0) return -1;
+            else if (ses == "M") return ((a * 0.2017) + (p * 0.199) + (f * 0.6309) - 55.0969) * t / 4.184;
+            else if (ses == "F") return ((a * 0.074) + (p * 0.126) + (f * 0.4472) - 20.4022) * t / 4.184;
+            else return -1;
         }
 
     }
