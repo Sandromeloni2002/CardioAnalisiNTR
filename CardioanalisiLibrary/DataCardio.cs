@@ -8,13 +8,13 @@ namespace CardioanalisiLibrary
 {
     public class DataCardio
     {
-        public static double BatMax(int eta, int ris)
+        public static double BatMax(int eta, double ris)
         {
             if (eta <= 0 || eta > 120) return -1;
             else return (220 - eta) * 0.9;
         }
 
-        public static double BatMin(int eta, int ris)
+        public static double BatMin(int eta, double ris)
         {
             if (eta <= 0 || eta > 120) return -1;
             else return (220 - eta) * 0.7;
@@ -22,10 +22,10 @@ namespace CardioanalisiLibrary
 
         public static string Valori(int freq, string ris)
         {
+            if (freq <= 0) return "Errore";
             if (freq < 60) return "Bradicardia";
             else if (freq >= 60 && freq <= 100) return "Normale";
             else if (freq > 100) return "Tachicardia";
-            else if (freq <= 0) return "Errore";
             else return "Errore";
         }
 
@@ -39,10 +39,9 @@ namespace CardioanalisiLibrary
 
         public static double SpesaEnergetica(int km, int p, string coc, double ris)
         {
-            if (km <= 0 || p <= 0 || coc != "camminata" || coc != "corsa") return -1;
+            if (km <= 0 || p <= 0 || coc != "camminata" && coc != "corsa") return -1;
             else if (coc == "corsa") return 0.9 * km * p;
             else return 0.5 * km * p;
-        }
-    
+        } 
     }
 }
