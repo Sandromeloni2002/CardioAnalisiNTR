@@ -29,12 +29,19 @@ namespace CardioanalisiLibrary
             else return "Errore";
         }
 
-        public static double CalorieBruciate(int f, int p, int a, int t, string ses, int ris)
+        public static double CalorieBruciate(int a, int p, int f, int t, string ses, int ris)
         {
             if (f <= 0 || p <= 0 || a <= 0 || t <= 0) return -1;
-            else if (ses == "M") return ((a * 0.2017) + (p * 0.199) + (f * 0.6309) - 55.0969) * t / 4.184;
-            else if (ses == "F") return ((a * 0.074) + (p * 0.126) + (f * 0.4472) - 20.4022) * t / 4.184;
+            else if (ses == "M") return Math.Round(((a * 0.2017) + (p * 0.199) + (f * 0.6309) - 55.0969) * t / 4.184);
+            else if (ses == "F") return Math.Round(((a * 0.074) + (p * 0.126) + (f * 0.4472) - 20.4022) * t / 4.184);
             else return -1;
+        }
+
+        public static double SpesaEnergetica(int km, int p, string coc, double ris)
+        {
+            if (km <= 0 || p <= 0 || coc != "camminata" || coc != "corsa") return -1;
+            else if (coc == "corsa") return 0.9 * km * p;
+            else return 0.5 * km * p;
         }
 
     }

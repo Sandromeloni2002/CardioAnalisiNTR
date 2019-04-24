@@ -54,6 +54,19 @@ namespace DataCardio.Test
             Assert.AreEqual(att, ris);
         }
 
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(0, 0, 0, 0, "M", -1)]
+        [DataRow(20, 70, 80, 60, "M", 191)]
+        [DataRow(20, 60, 70, 60, "F", 286)]
+
+        public void TestMethodCalorieBruciate(int a, int p, int f, int t, string ses, int ris)
+        {
+            double att = CardioanalisiLibrary.DataCardio.CalorieBruciate(a, p, f, t, ses, ris);
+
+            Assert.AreEqual(att, ris);
+        }
+
 
     }
 }
