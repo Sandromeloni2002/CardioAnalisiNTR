@@ -43,6 +43,6 @@ namespace CardioanalisiLibrary
             else if (coc == "corsa") return 0.9 * km * p;
             else return 0.5 * km * p;
         }
-
+    
     }
 }
